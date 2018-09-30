@@ -26,8 +26,7 @@ class UsernameForm extends Component {
     return (
       <Form reply onSubmit={this.onFormSubmit}>
         <Form.Group>
-          <Form.Input placeholder='username' onChange={this.onUsernameChange} /> 
-          <Button content='Next' labelPosition='right' icon='angle double right' primary />
+          <Form.Input placeholder='username' onChange={this.onUsernameChange} action={{ color: 'primary', labelPosition: 'right', icon: 'angle double right', content: 'Next' }} /> 
         </Form.Group> 
       </Form> 
     );
