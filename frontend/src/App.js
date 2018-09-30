@@ -5,6 +5,8 @@ import * as SockJS from 'sockjs-client';
 import { Comment, Grid, Header } from 'semantic-ui-react'
 import FormWrapper from './FormWrapper';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 class App extends Component {
 
   stompClient;
@@ -24,7 +26,7 @@ class App extends Component {
   }
 
   _initWebSocketConnection = () => {
-    const socket = new SockJS('http://localhost:8080/chat');
+    const socket = new SockJS(`${API_URL}/chat`);
     this.stompClient = Stomp.over(socket);
     this.stompClient.connect({}, frame => {
       this._subscribeMessages();
@@ -41,11 +43,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:8080/messages')
+    fetch(`${API_URL}/messages`)
     .then(response => response.json())
-    .then(messages => this.setState({messages}));
-    
-    this._scrollToBottom();
+    .then(messages => this.setState({messages}));    
   }
 
   componentDidUpdate = () => {
