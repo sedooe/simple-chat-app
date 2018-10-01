@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../style/App.css';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import { Comment, Grid, Header } from 'semantic-ui-react'

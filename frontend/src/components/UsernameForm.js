@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 
 class UsernameForm extends Component {
 
@@ -26,7 +26,7 @@ class UsernameForm extends Component {
     return (
       <Form reply onSubmit={this.onFormSubmit}>
         <Form.Group>
-          <Form.Input placeholder='username' onChange={this.onUsernameChange} action={{ color: 'primary', labelPosition: 'right', icon: 'angle double right', content: 'Next' }} /> 
+          <Form.Input placeholder='username' onChange={this.onUsernameChange} action={{ color: 'blue', labelPosition: 'right', icon: 'angle double right', content: 'Next' }} /> 
         </Form.Group> 
       </Form> 
     );
